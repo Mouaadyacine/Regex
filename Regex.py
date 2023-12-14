@@ -1,22 +1,33 @@
 import re
-def isCharinSTR(mot, chaine):
+def recherche(mot, chaine):
     pattern = re.escape(mot)
     match = re.search(pattern, chaine)
-    return bool(match)
-
-def isDigitInSTR(chaine):
+    if match :
+        return True
+    else :
+        return False
+    
+def verifie_chaine(chaine):
     match = re.search(r"\d" , chaine)
-    return bool(match)
-
-def replace(chaine):
+    if match :
+        return True
+    else :
+        return False
+    
+def remplace(chaine):
     match = re.sub(r"\s" , "-" , chaine )
-    return bool(match) 
+    return match 
 
-def verifyNumber(num):
-    match = re.search(r"^\d{2}-\d{3}-\d{4}$" , num)
-    return bool(match) 
-
+def verifie_numero(numero):
+    match = re.search(r"^\d{2}-\d{3}-\d{4}$" , numero)
+    if match :
+        return True
+    else :
+        return False
 
 def verifie_email(email):
-    match = re.search(r"^\w+@\w+\.(com)$" , email)
-    return bool(match)
+    match = re.search(r"^\w+@\w+\.(com|ma|org|info|ru)$" , email)
+    if match :
+        return True
+    else :
+        return False
